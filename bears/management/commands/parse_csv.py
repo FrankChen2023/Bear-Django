@@ -12,6 +12,7 @@ class Command(BaseCommand):
 
         # drop the data from the table so that if we rerun the file, we don't repeat values
         Bear.objects.all().delete()
+        Sighting.objects.all().delete()
         print("table dropped successfully")
         # create table again
 
@@ -33,4 +34,27 @@ class Command(BaseCommand):
                 ear_applied = row[11],
                 )
                 bear.save()
+        
+        with open(str(base_dir) + '/bears/PolarBear_Telemetry_southernBeaufortSea_2009_2011/USGS_WC_eartags_output_files_2009-2011-Status.csv', newline='') as f:
+            reader = csv.reader(f, delimiter=",")
+            next(reader) # skip the header line
+            for row in reader:
+                try:
+                    print(row)
+                
+                    bear_temp = row[0]  
+                    print(bear_temp)
+                    bear = Bear.objects.filter(bearID = bear_temp).first()
+                    print(bear.id)
+
+                    sighting = Sighting.objects.create(
+                    deploy_id = int(row[0]),
+                    bear_id = bear,
+                    recieved = row[2],
+                    latitude = float(row[4]),
+                    longitude = float(row[5]),
+                    )
+                    sighting.save()
+                except:
+                    pass
         print("data parsed successfully")
