@@ -51,7 +51,6 @@ class Command(BaseCommand):
                     latitude = float(row[4]),
                     longitude = float(row[5]),
                     )
-                    print(deploy_id)
                     sighting.save()
                 except:
                     pass
