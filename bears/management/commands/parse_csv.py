@@ -22,7 +22,6 @@ class Command(BaseCommand):
             reader = csv.reader(f, delimiter=",")
             next(reader) # skip the header line
             for row in reader:
-                print(row)
 
                 bear = Bear.objects.create(
                 bearID = int(row[0]),
