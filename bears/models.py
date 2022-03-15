@@ -20,7 +20,7 @@ class Bear(models.Model):
 
 class Sighting(models.Model):
     deploy_id = models.IntegerField()
-    bear_id = models.TextField()
+    bear_id = models.TextField(default='Null')
     recieved = models.TextField()
     latitude = models.FloatField()
     longitude = models.FloatField()

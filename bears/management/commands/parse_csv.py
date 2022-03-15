@@ -43,13 +43,14 @@ class Command(BaseCommand):
                 
                     bear_temp = row[0]  
                     bear = Bear.objects.filter(bearID = bear_temp).first()
+
                     sighting = Sighting.objects.create(
                     deploy_id = int(row[0]),
-                    bear_id = bear,
+                    bear_id = str(bear),
                     recieved = row[2],
                     latitude = float(row[4]),
                     longitude = float(row[5]),
-                    temperature = float(temp_temp),
+                    temperature = float(temp_temp)
                     )
                     sighting.save()
                 except:
