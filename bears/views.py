@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from .models import Bear
+from .models import Bear, Sighting
 
 def bear_list(request):
     bears = Bear.objects.all()
