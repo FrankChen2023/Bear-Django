@@ -38,19 +38,12 @@ class Command(BaseCommand):
             reader = csv.reader(f, delimiter=",")
             next(reader) # skip the header line
             for row in reader:
-                try:
-                
-                    bear_temp = row[0]  
-                    bear = Bear.objects.filter(bearID = bear_temp).first()
-
-                    sighting = Sighting.objects.create(
-                    deploy_id = int(row[0]),
-                    bear_id = str(bear),
-                    recieved = row[2],
-                    latitude = float(row[4]),
-                    longitude = float(row[5]),
-                    )
-                    sighting.save()
-                except:
-                    pass
+                print(row)
+                sighting = Sighting.objects.create(
+                deploy_id = row[0],
+                recieved = row[2],
+                latitude = row[4],
+                longitude = row[5],
+                )
+                sighting.save()
         print("data parsed successfully")

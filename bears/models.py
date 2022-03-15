@@ -19,13 +19,13 @@ class Bear(models.Model):
         self.age_class, self.ear_applied, self.created_date
 
 class Sighting(models.Model):
-    deploy_id = models.IntegerField(default=0)
+    deploy_id = models.TextField(default='Null')
     bear_id = models.TextField(default='Null')
     recieved = models.TextField(default='Null')
-    latitude = models.FloatField(default=0.00)
-    longitude = models.FloatField(default=0.00)
-    temperature = models.FloatField(default=0.00)
-    created_date = models.DateTimeField(auto_now_add=True)
+    latitude = models.TextField(default='Null')
+    longitude = models.TextField(default='Null')
+    temperature = models.TextField(default='Null')
+    created_date = models.TextField(default='Null')
 
     def __str__(self):
         return self.deploy_id, self.bear_id, self.recieved, self.latitude, self.longitude, 
