@@ -1,12 +1,17 @@
 <html><head>
-<title>Polar Bear Tracking</title>
+<title>Polar Bear Status</title>
 </head><body>
-    <h1>Polar bears Tagged for Tracking</h1>
-    {% for bear in bears %}
-        <b> <a href="{% url 'bear_status' id=bear.bearID %}">{{bear.bearID }}</a></b>
-    This is a {{ bear.age_class }} aged bear 
-    {{bear.bearID}}, a {{ bear.sex }} bear, who has has an tag in its' {{ bear.ear_applied }} ear, with {{ bear.pTT_ID }} devise, and was
-    tagged at {{ bear.capture_lat }} and {{ bear.capture_long }}
+    <h1>Polar Bear Status</h1>
+    <p>Bear: 
+        {% for bear in bears %}
+        <b>{{bear.deploy_id }}</b> | 
+        {{bear.bear_id}} | 
+        {{ bear.recieved}} | 
+        {{bear.longitude}} |
+        {{bear.latitude}}	| 
+        {{ bear.temperature}} |
+        {{bear.created_date}}	
+        {% endfor %}
     </p>
-    {% endfor %}
+    <p>Sightings via Radio Device</p>
 </body></html>

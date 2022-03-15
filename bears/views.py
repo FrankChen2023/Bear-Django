@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import Bear, Sighting
 
 def bear_list(request):
-    bears = Bear.objects.all()
+    bears = Sighting.objects.all()
     return render(request, 'bear_list.html', {'bears' : bears})
 
 def bear_detail(request, id):
