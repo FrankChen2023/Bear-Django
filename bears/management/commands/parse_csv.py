@@ -40,12 +40,9 @@ class Command(BaseCommand):
             next(reader) # skip the header line
             for row in reader:
                 try:
-                    print(row)
                 
                     bear_temp = row[0]  
-                    print(bear_temp)
                     bear = Bear.objects.filter(bearID = bear_temp).first()
-                    print(bear.id)
 
                     sighting = Sighting.objects.create(
                     deploy_id = int(row[0]),
@@ -54,6 +51,7 @@ class Command(BaseCommand):
                     latitude = float(row[4]),
                     longitude = float(row[5]),
                     )
+                    print(deploy_id)
                     sighting.save()
                 except:
                     pass
