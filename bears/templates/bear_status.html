@@ -4,12 +4,11 @@
     <h1>Polar Bear Status</h1>
     <p>Bear: 
         {% for bear in bears_status %}
-        <b>{{bear.deploy_id }}</b> | 
-        {{bear.bear_id}} | 
+        <p><b>{{bear.deploy_id }}</b> | 
         {{ bear.recieved}} | 
         {{bear.longitude}} |
         {{bear.latitude}}	| 
-        {{bear.created_date}}	
+        {{bear.created_date}}</p>
         {% endfor %}
     </p>
     <p>Sightings via Radio Device</p>
