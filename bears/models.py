@@ -20,13 +20,10 @@ class Bear(models.Model):
 
 class Sighting(models.Model):
     deploy_id = models.TextField
-    bear_id = models.TextField
     recieved = models.TextField
     latitude = models.TextField
     longitude = models.TextField
-    temperature = models.TextField
     created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.deploy_id, self.bear_id, self.recieved, self.latitude, self.longitude, 
-        self.temperature, self.created_date
+        return self.deploy_id, self.recieved, self.latitude, self.longitude, self.created_date
