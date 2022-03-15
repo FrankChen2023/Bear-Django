@@ -43,7 +43,7 @@ class Command(BaseCommand):
                 
                     bear_temp = row[0]  
                     bear = Bear.objects.filter(bearID = bear_temp).first()
-
+                    print(row)
                     sighting = Sighting.objects.create(
                     deploy_id = int(row[0]),
                     bear_id = bear,
