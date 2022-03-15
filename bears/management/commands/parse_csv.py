@@ -38,18 +38,15 @@ class Command(BaseCommand):
         with open(str(base_dir) + '/bears/PolarBear_Telemetry_southernBeaufortSea_2009_2011/USGS_WC_eartags_output_files_2009-2011-Status.csv', newline='') as f:
             reader = csv.reader(f, delimiter=",")
             next(reader) # skip the header line
-            for row in reader:
-                try:
                 
-                    bear_temp = row[0]  
-                    print(row)
-                    sighting = Sighting.objects.create(
-                    deploy_id = int(row[0]),
-                    recieved = row[2],
-                    latitude = float(row[4]),
-                    longitude = float(row[5]),
-                    )
-                    sighting.save()
-                except:
-                    pass
+
+            sighting = Sighting.objects.create(
+            deploy_id = 111,
+            recieved = 'ssss',
+            latitude = 1.111,
+            longitude = 1.111,
+            temperature = 1.111
+            )
+            sighting.save()
+
         print("data parsed successfully")
