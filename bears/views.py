@@ -9,8 +9,8 @@ def bear_detail(request, id):
     bear = get_object_or_404(Bear, id=id)
     return render(request, 'bear_detail.html', {'bear' : bear})
 
-def bear_status(request, id):
-    bears_status = Sighting.objects.all()
+def bear_status(request, deploy_id):
+    bears_status = Sighting.objects.all(Sighting, id=deploy_id)
     return render(request, 'bear_status.html', {'bears_status' : bears_status})
 
 # Create your views here.
