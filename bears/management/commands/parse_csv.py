@@ -42,11 +42,9 @@ class Command(BaseCommand):
                 try:
                 
                     bear_temp = row[0]  
-                    bear = Bear.objects.filter(bearID = bear_temp).first()
                     print(row)
                     sighting = Sighting.objects.create(
                     deploy_id = int(row[0]),
-                    bear_id = bear,
                     recieved = row[2],
                     latitude = float(row[4]),
                     longitude = float(row[5]),
