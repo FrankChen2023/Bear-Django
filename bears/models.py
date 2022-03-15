@@ -25,7 +25,7 @@ class Sighting(models.Model):
     latitude = models.TextField(default='Null')
     longitude = models.TextField(default='Null')
     temperature = models.TextField(default='Null')
-    created_date = models.TextField(default='Null')
+    created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.deploy_id, self.bear_id, self.recieved, self.latitude, self.longitude, 
