@@ -6,7 +6,7 @@
         <b> <a href="{% url 'bear_status' id=bear.bearID %}">{{bear.bearID }}</a></b>
     This is a {{ bear.age_class }} aged bear 
     {{bear.bearID}}, a {{ bear.sex }} bear, who has has an tag in its' {{ bear.ear_applied }} ear, with {{ bear.pTT_ID }} devise, and was
-    tagged at {{ bear.capture_lat }} and {{ bear.capture_long }}
+    tagged at {{ bear.capture_lat }} and {{ bear.capture_long }} and {{ bear.created_date }}
     </p>
     {% endfor %}
 </body></html>
