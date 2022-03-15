@@ -19,10 +19,10 @@ class Bear(models.Model):
         self.age_class, self.ear_applied, self.created_date
 
 class Sighting(models.Model):
-    deploy_id = models.TextField
-    recieved = models.TextField
-    latitude = models.TextField
-    longitude = models.TextField
+    deploy_id = models.TextField()
+    recieved = models.TextField()
+    latitude = models.TextField()
+    longitude = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
