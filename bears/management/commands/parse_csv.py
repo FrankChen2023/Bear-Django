@@ -50,7 +50,6 @@ class Command(BaseCommand):
                     recieved = row[2],
                     latitude = float(row[4]),
                     longitude = float(row[5]),
-                    temperature = float(temp_temp)
                     )
                     sighting.save()
                 except:
