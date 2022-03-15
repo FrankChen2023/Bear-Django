@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-d&4&y5h+-zb_r=9dl(c&&fgau-8^(h%+#)i9m%%!%!fn=v-s48
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nominalpress-annexlion-8000.codio-box.uk', 'localhost']
+ALLOWED_HOSTS = ['bear-django.herokuapp.com', 'localhost']
 
 
 # Application definition
